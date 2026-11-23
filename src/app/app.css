@@ -1,0 +1,376 @@
+:host {
+  --bg-page: #ffffff;
+  --bg-soft: #faf8f5;
+  --bg-benefit: #fbf3ee;
+  --ink-dark: #23201e;
+  --ink-muted: #6e665f;
+  --rose-accent: #d85b8a;
+  --gold-accent: #b59461;
+  --line-soft: #ece5dd;
+}
+
+.store-page {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--ink-dark);
+  min-height: 100vh;
+}
+
+h1, h2, .brand-name, .footer-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Header */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.brand-name {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--ink-dark);
+  text-decoration: none;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.top-nav a:hover {
+  color: var(--rose-accent);
+}
+
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hero compacto */
+.hero-compact {
+  text-align: center;
+  padding: 36px 20px 28px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--rose-accent);
+  background-color: var(--bg-benefit);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hero-compact h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.hero-compact p {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  margin: 0 auto 18px;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background-color: var(--ink-dark);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-cta:hover {
+  background-color: var(--rose-accent);
+  transform: translateY(-1px);
+}
+
+/* Franja de 4 beneficios */
+.benefits-strip {
+  padding: 8px 5% 18px;
+}
+
+.benefits-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.benefit-item {
+  background-color: var(--bg-benefit);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.benefit-icon {
+  color: var(--rose-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-item strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-dark);
+  margin-bottom: 2px;
+}
+
+.benefit-item span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
+/* Sección de tarjetas compactas */
+.showcase-section {
+  padding: 16px 5% 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.showcase-header h2 {
+  font-size: 1.85rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.showcase-header p {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+/* Carrusel horizontal con tarjetas de tamaño controlado */
+.cards-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+
+.story-card {
+  position: relative;
+  flex: 0 0 215px; /* Tamaño compacto y uniforme */
+  height: 270px;    /* Altura moderada para que no se vean gigantes */
+  border-radius: 16px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  text-decoration: none;
+  background-color: var(--bg-soft);
+  box-shadow: 0 6px 18px rgba(35, 32, 30, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(35, 32, 30, 0.12);
+}
+
+.story-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.story-card:hover img {
+  transform: scale(1.05);
+}
+
+.badge-new {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background-color: #ffffff;
+  color: var(--ink-dark);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.story-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 16, 15, 0.72) 0%, rgba(20, 16, 15, 0.05) 55%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.story-overlay h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Footer con WhatsApp e Instagram */
+.store-footer {
+  background-color: var(--bg-soft);
+  border-top: 1px solid var(--line-soft);
+  padding: 36px 5% 24px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin: 0 0 20px;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.btn-wa,
+.btn-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.btn-wa {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+.btn-ig {
+  background-color: #ffffff;
+  color: var(--ink-dark);
+  border: 1px solid var(--line-soft);
+}
+
+.btn-wa:hover,
+.btn-ig:hover {
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
+
+/* Botón flotante WhatsApp */
+.wa-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  z-index: 120;
+  transition: transform 0.25s ease;
+}
+
+.wa-float:hover {
+  transform: scale(1.06);
+}
+
+@media (max-width: 980px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-compact h1 {
+    font-size: 2rem;
+  }
+  .story-card {
+    flex: 0 0 180px;
+    height: 230px;
+  }
+}
